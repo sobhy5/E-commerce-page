@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYKA - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script defer src="script.js"></script>
+</head>
+<body class="body">
+    <header>
+        <h1>Welcome to MYKA</h1>
+    </header>
+    <main class="login-container">
+        <section class="login-section">
+            <form class="login-form" id="loginForm">
+                <p class="heading">Login</p>
+                <p class="paragraph">Login to your account</p>
+                <div class="input-group">
+                    <input
+                      required=""
+                      placeholder="Username"
+                      name="username"
+                      id="username"
+                      type="text"
+                    />
+                </div>
+                <div class="input-group">
+                    <input
+                      required=""
+                      placeholder="Password"
+                      name="password"
+                      id="password"
+                      type="password"
+                    />
+                </div>
+                <button type="submit">Login</button>
+                <div class="bottom-text">
+                    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                    <p><a href="#">Forgot password?</a></p>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("Script loaded and DOM fully loaded and parsed.");
+            const loginForm = document.getElementById('loginForm');
+
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                console.log("Form submitted.");
+
+                
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                console.log("Username:", username);
+                console.log("Password:", password);
+
+
+                if (username && password) { 
+                    window.location.href = 'Home.html'; 
+                } else {
+                    alert('Please enter both username and password');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
